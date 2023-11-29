@@ -1,0 +1,52 @@
+sudo apt-get install git (debian)
+sudo yum install git (redhart)
+git init <rep name> creates and initiliazes a new repo
+git config --global user.name "name"
+git config --global user.email "email"   ~This is used to setup your identity in git
+git config --list  ~to show your identity
+git config --global core.editor "/usr/bin/vi"  ~ to setup the editor you want to use 
+cat ~/.gitconfig  to see your git config
+git status -s  ~shows all files on the stagging area both tracked and untracked
+git status -v  ~to see changes made to a file
+git commit -m " msg "  ~used to commit files to git without messing around with an editor
+git rm --cached <filename>  ~used to remove a file after commit from index but leave it in the working directory to remove from the working directory commit the file again
+git commit -a -m  ~to commit a modified file while skipping the staging area
+touch .gitignore ~is used to ignore files we dont want git to track
+after creating the gitignore file we need to add it to our repo using git add, git commit
+echo "<file name>/*" >> .gitignore  ~anyfile we dont want git to track
+
+to setup back up in a file vim into the file and type :set backup, add content and then exit the file this will set a backup of the file
+
+echo *~ >> .gitignore  ~to ignore files that end with ~
+git tag -a <desc> -m "msg"  ~ to tag a project for a specific release
+git tag ~ shows the tag
+git show ~ shows a detailed infor about the tag
+git tag -d <desc> e.g v0.1  ~ deletes a tag
+git branch -d <branch name> to delete a branch
+cat .git/HEAD ~ shows the last branch you were working on
+ to merge in git you have to be on the branch you want to merge into and then type git merge <the branch youre mergeing from> e.g on master branch -- git merge development
+
+git rebase <branch name>  ~ git rebase replay changes made to one branch over the top of another branch 
+git rebase makes the history of our work cleaner. only rebase things that are in your local repository. Do not rebase things that someoneelse has done. git merge shows accurate history of your project while rebase provides something as a falsified record to show a cleaner history. only rebase with what you have worked on and not commits outside of your repo. 
+git revert HEAD ~undo the prevoius commit by commiting another  
+git revert HEAD~2 used to revert the no 2 commit on the log
+git gc --prune ~ to clean up your repo
+git gc --auto to see files that need cleaning
+git config gc.pruneexpire "30 days"  ~ to config the garbage collection to run every 30 days
+git diff --summary <commit1> <commit2> to see what changes between the two commits
+git clone --local /path/ repo ~ to clone a remote repo on your local machine
+
+git add . - to add file to staging area
+git restore --staged <filename> - to unstage
+git status
+git commit -m "<message>"
+git push origin <main>
+git checkout -b <branch name>  to create and switch a new branch
+git checkout <branch name> to create new branch
+git merge 
+git stash---keeps your work on hold on the staging area
+git statsh pop --used to bring back those work you had on hold
+git revert <commit id> reverts the change you did
+git cherry-pick <commit id> to merge a specific commit to another branch
+git tag <msg> commit id -- used to mark a specific commit to show its important
+git tag -n -- to show all the git tags 
