@@ -35,6 +35,10 @@ git gc --auto to see files that need cleaning
 git config gc.pruneexpire "30 days"  ~ to config the garbage collection to run every 30 days
 git diff --summary <commit1> <commit2> to see what changes between the two commits
 git clone --local /path/ repo ~ to clone a remote repo on your local machine
+git remote show origin -- shows info about branches on a remove server we are tracking and inform anything new on the server
+git fetch
+git pull
+git remote rm <repo name> to delete remote repo
 
 git add . - to add file to staging area
 git restore --staged <filename> - to unstage
@@ -50,3 +54,7 @@ git revert <commit id> reverts the change you did
 git cherry-pick <commit id> to merge a specific commit to another branch
 git tag <msg> commit id -- used to mark a specific commit to show its important
 git tag -n -- to show all the git tags 
+
+git config --global core.autocrlf false ~ to correct error; "LF will be replaced by CRLF the next time Git touches it" ( for windows)
+
+git config --global core.autocrlf input ~ to correct error; "LF will be replaced by CRLF the next time Git touches it" ( for linux and macos)
